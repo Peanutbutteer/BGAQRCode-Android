@@ -1,7 +1,9 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+
 
 android {
+    namespace "cn.bingoogolapple.qrcode.zxing"
+
     compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
 
     defaultConfig {

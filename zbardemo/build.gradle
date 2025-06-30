@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace "cn.bingoogolapple.qrcode.zbardemo"
+
     compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
 
     defaultConfig {
