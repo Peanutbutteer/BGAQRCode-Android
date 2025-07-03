@@ -85,7 +85,10 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/include \
 LOCAL_SHARED_LIBRARIES := iconv
 
 # Adding both max-page-size and common-page-size for 16KB alignment.
-LOCAL_LDFLAGS += "-Wl,-z,max-page-size=16384"
-LOCAL_LDFLAGS += "-Wl,-z,common-page-size=16384"
+
+ifeq ($(filter $(TARGET_ARCH_ABI), arm64-v8a x86_64), arm64-v8a x86_64)
+    LOCAL_LDFLAGS += -Wl,-z,max-page-size=16384
+    LOCAL_LDFLAGS += -Wl,-z,common-page-size=16384
+endif
 
 include $(BUILD_SHARED_LIBRARY)
